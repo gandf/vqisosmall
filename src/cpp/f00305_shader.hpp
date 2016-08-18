@@ -96,6 +96,12 @@ public:
 		glGetProgramiv(program, GL_VALIDATE_STATUS, &status);
 		if (status == GL_FALSE) {
 			doTraceND( "Error validating shader " , i__s(program), " ", _shaderFile);
+			
+			int loglen;
+			char logbuffer[1000];
+			glGetShaderInfoLog(program, sizeof(logbuffer), &loglen, logbuffer);
+			doTraceND(logbuffer);
+
 			LAST_COMPILE_ERROR = true;
 			//popTrace();
 

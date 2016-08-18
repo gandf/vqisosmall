@@ -3253,7 +3253,6 @@ void main() {
 	
 
 	//vec4 tex2 =  texture3D(Texture1, newCoords); //***
-	//vec4 tex2 = texture(Texture1, newCoords); //***
 	vec4 tex2 = vec4(0.0); //***
 	if (tex2.a > 0.5) {
 		finalMat = TEX_DIRT;
